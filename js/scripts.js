@@ -9,11 +9,13 @@ var generator = function(str) {
      }
    }
   }
-  return pigLatinArray;
+  return pigLatinArray.join(' ');
 }
 $(function() {
   $("#form").submit(function(event) {
     event.preventDefault();
     var userInput = $("#userInput").val().toLowerCase();
+    var outputString = generator(userInput);
+    $("#output").text(outputString);
   });
 });
